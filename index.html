@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyBuddy Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+    }
+
+    /* Navbar */
+    nav {
+      background: rgba(0,0,0,0.3);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+      opacity: 0.9;
+    }
+
+    .hero button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      background: white;
+      color: #2575fc;
+      font-weight: bold;
+    }
+
+    .hero button:hover {
+      background: #f1f1f1;
+    }
+
+    /* Dashboard Container */
+    .container {
+      background: #f5f6ff;
+      color: black;
+      border-radius: 40px 40px 0 0;
+      padding: 60px 40px;
+    }
+
+    .container h1 {
+      text-align: center;
+      font-size: 45px;
+      color: #182848;
+    }
+
+    .container p {
+      text-align: center;
+      color: gray;
+      font-size: 18px;
+    }
+
+    /* Grid Tiles */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 60px;
+    }
+
+    .tile {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .tile:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .tile h2 {
+      color: #182848;
+      font-size: 22px;
+    }
+
+    .tile p {
+      color: gray;
+      font-size: 15px;
+      margin: 15px 0;
+    }
+
+    .tile button {
+      background: #4b6cb7;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .tile button:hover {
+      background: #182848;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    /* Sections */
+    .pageSection {
+      display: none;
+      padding: 80px;
+      text-align: center;
+    }
+
+    .pageSection h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .pageSection p {
+      font-size: 20px;
+      max-width: 750px;
+      margin: auto;
+      opacity: 0.9;
+    }
+
+    .infoBox {
+      background: rgba(255,255,255,0.2);
+      padding: 25px;
+      border-radius: 20px;
+      margin-top: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .infoBox h2 {
+      margin-top: 0;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>📚 StudyBuddy</h2>
+    <div>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('dashboard')">Dashboard</a>
+      <a onclick="showSection('tools')">Tools</a>
+      <a onclick="showSection('progress')">Progress</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION (UNCHANGED) -->
+  <div id="homeSection" class="pageSection" style="display:block;">
+
+    <section class="hero">
+      <h1>Learn Smarter, Not Harder 🚀</h1>
+      <p>
+        StudyBuddy helps students manage notes, quizzes, tasks,
+        AI help, and progress tracking in one powerful dashboard.
+      </p>
+
+      <button onclick="alert('Welcome to StudyBuddy Dashboard!')">
+        Get Started
+      </button>
+    </section>
+
+    <div class="container">
+      <h1>✨ Smart Dashboard</h1>
+      <p>All your study tools in one modern workspace</p>
+
+      <div class="grid">
+
+        <div class="tile">
+          <h2>📘 Notes Saver</h2>
+          <p>Quickly save and manage your notes.</p>
+          <button onclick="alert('Notes feature coming soon!')">Open Notes</button>
+        </div>
+
+        <div class="tile">
+          <h2>🧠 Quiz Generator</h2>
+          <p>Generate quizzes from any topic instantly.</p>
+          <button onclick="alert('Quiz feature coming soon!')">Start Quiz</button>
+        </div>
+
+        <div class="tile">
+          <h2>📅 Daily Planner</h2>
+          <p>Plan your tasks and stay organized daily.</p>
+          <button onclick="alert('Planner feature coming soon!')">View Planner</button>
+        </div>
+
+        <div class="tile">
+          <h2>🤖 AI Chat Assistant</h2>
+          <p>Ask AI for help with your studies anytime.</p>
+          <button onclick="alert('AI Chat feature coming soon!')">Chat Now</button>
+        </div>
+
+        <div class="tile">
+          <h2>📊 Progress Tracker</h2>
+          <p>Track your growth and learning progress.</p>
+          <button onclick="alert('Progress feature coming soon!')">Check Progress</button>
+        </div>
+
+        <div class="tile">
+          <h2>🎯 Focus Timer</h2>
+          <p>Use Pomodoro timer to study effectively.</p>
+          <button onclick="alert('Timer feature coming soon!')">Start Timer</button>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      © 2026 StudyBuddy Dashboard | Hackathon Ready Project 🚀
+    </footer>
+  </div>
+
+  <!-- DASHBOARD CONTENT -->
+  <div id="dashboardSection" class="pageSection">
+    <h1>📊 Dashboard Overview</h1>
+    <p>Your personal study control center.</p>
+
+    <div class="infoBox">
+      <h2>What you can see here:</h2>
+      <ul>
+        <li>✅ Today’s Study Plan</li>
+        <li>📌 Pending Assignments</li>
+        <li>⏳ Focus Timer Summary</li>
+        <li>📈 Weekly Learning Report</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TOOLS CONTENT -->
+  <div id="toolsSection" class="pageSection">
+    <h1>🛠 Study Tools</h1>
+    <p>All smart tools to boost your productivity.</p>
+
+    <div class="infoBox">
+      <h2>Available Tools:</h2>
+      <ul>
+        <li>📘 Notes Manager</li>
+        <li>🧠 Quiz Generator</li>
+        <li>📅 Daily Planner</li>
+        <li>🎯 Pomodoro Focus Timer</li>
+        <li>🤖 AI Study Assistant</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROGRESS CONTENT -->
+  <div id="progressSection" class="pageSection">
+    <h1>📈 Progress Tracker</h1>
+    <p>Track how far you’ve come in your learning journey.</p>
+
+    <div class="infoBox">
+      <h2>Your Progress Includes:</h2>
+      <ul>
+        <li>📚 Topics Completed</li>
+        <li>🔥 Daily Study Streak</li>
+        <li>🏆 Quiz Scores</li>
+        <li>⭐ Productivity Level</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONTACT CONTENT -->
+  <div id="contactSection" class="pageSection">
+    <h1>📩 Contact StudyBuddy</h1>
+    <p>Need help or feedback? Reach out anytime.</p>
+
+    <div class="infoBox">
+      <h2>Contact Information:</h2>
+      <p>📧 Email: studybuddy@gmail.com</p>
+      <p>📞 Phone: +91 98765 43210</p>
+      <p>🌍 Location: Student Productivity Hub</p>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function showSection(section) {
+
+      document.getElementById("homeSection").style.display = "none";
+      document.getElementById("dashboardSection").style.display = "none";
+      document.getElementById("toolsSection").style.display = "none";
+      document.getElementById("progressSection").style.display = "none";
+      document.getElementById("contactSection").style.display = "none";
+
+      document.getElementById(section + "Section").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
