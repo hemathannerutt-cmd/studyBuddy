@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyBuddy - Notes Manager</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+
+    textarea {
+      width: 80%;
+      height: 200px;
+      border-radius: 15px;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      margin-top: 20px;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      background: white;
+      color: #2575fc;
+    }
+
+    button:hover {
+      background: #f1f1f1;
+    }
+
+    .savedNotes {
+      margin-top: 40px;
+      background: rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>📘 Notes Manager</h1>
+  <p>Write and save your notes instantly!</p>
+
+  <textarea id="noteInput" placeholder="Type your notes here..."></textarea>
+
+  <br>
+  <button onclick="saveNote()">💾 Save Note</button>
+  <button onclick="clearNotes()">🗑 Clear All</button>
+
+  <div class="savedNotes">
+    <h2>📌 Saved Notes:</h2>
+    <p id="output"></p>
+  </div>
+
+  <a href="index.html">⬅ Back to Dashboard</a>
+
+  <script>
+    function saveNote() {
+      let note = document.getElementById("noteInput").value;
+
+      if (note.trim() === "") {
+        alert("Please write something first!");
+        return;
+      }
+
+      localStorage.setItem("studybuddy_note", note);
+      displayNote();
+      alert("Note Saved Successfully ✅");
+    }
+
+    function displayNote() {
+      let saved = localStorage.getItem("studybuddy_note");
+      document.getElementById("output").innerText =
+        saved ? saved : "No notes saved yet.";
+    }
+
+    function clearNotes() {
+      localStorage.removeItem("studybuddy_note");
+      displayNote();
+      alert("All Notes Cleared ❌");
+    }
+
+    window.onload = displayNote;
+  </script>
+
+</body>
+</html>
